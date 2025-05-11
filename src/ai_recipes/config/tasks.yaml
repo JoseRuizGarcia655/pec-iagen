@@ -1,0 +1,62 @@
+# src/ai_recipes/config/tasks.yaml
+ingredient_finder_task:
+  description: >
+    Within the context of this text from the book '{title}' you should directly (mentioned in the text) or indirectly (related by context, situation, 
+    landscape, culture) search for foods or ingredients edible for some type of recipe.
+  expected_output: >
+    A list with at least 30 ingredients or foods in singular form and justify why the ingredient is related to the content of the book (if the ingredient 
+    is mentioned directly in the text and/or the relationship within the context).
+  agent: ingredient_finder
+
+ingredient_checker_task:
+  description: >
+    You want to make sure that you select only the edible and potentially usable ingredients in a culinary recipe.
+  expected_output: >
+    A list of all ingredients or foods in the singular and justify why the ingredient is related to the content of the book (if the ingredient is 
+    mentioned directly in the text and/or the relationship within the context).
+  agent: ingredient_checker
+
+make_recipes_task:
+  description: >
+    Make 5 cooking recipes with the available ingredients. You don't have to use all the ingredients, you just have to make sure that most of 
+    the necessary ingredients are among them.
+  expected_output: >
+    A list of all the recipes you have created. Be original and make sure they are amazing and tasty recipes.
+  agent: chef
+
+judge_recipes_task:
+  description: >
+    Select the 3 best recipes based on their originality and flavor.
+  expected_output: >
+    A list of all the recipes you have selected.
+  agent: judge_cooking
+
+writer_task:
+  description: >
+    Write an article for each recipe. Based on the justification for each ingredient, argue in a paragraph why this recipe is related 
+    to the book.
+  expected_output: >
+    Write an article in markdown with the three recipes maintaining the next structure. Do not add anything else in your response.
+    # Title of the book
+    # Title Recipe 1
+    ## Recipe
+    ### Time
+    ### Difficulty
+    ### Ingredients
+    ### Preparation
+    ## Justification
+    # Title Recipe 2
+    ## Recipe
+    ### Time
+    ### Difficulty
+    ### Ingredients
+    ### Preparation
+    ## Justification
+    # Title Recipe 3
+    ## Recipe
+    ### Time
+    ### Difficulty
+    ### Ingredients
+    ### Preparation
+    ## Justification
+  agent: writer
